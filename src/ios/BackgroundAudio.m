@@ -8,13 +8,13 @@
 @implementation BackgroundAudio
 
 - (void)pluginInitialize {
-    BOOL usesMusicControls = [self.commandDelegate.settings objectForKey:[@"usesMusicControls" lowercaseString]];
+    BOOL usesMediaControls = [self.commandDelegate.settings objectForKey:[@"usesMediaControls" lowercaseString]];
     // initializations go here.
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     BOOL ok;
     NSError *setCategoryError = nil;
 
-    if (usesMusicControls) {
+    if (usesMediaControls) {
         ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
                 withOptions:0
                 error:&setCategoryError];
