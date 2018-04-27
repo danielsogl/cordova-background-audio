@@ -39,3 +39,11 @@ see [#9](/../../issues/9)
 Add the following to your `config.xml`
 
     <gap:plugin name="cordova-plugin-background-audio" />
+
+# Compatibility with Cordova-Plugin-Music-Controls
+
+If you're using the `cordova-plugin-music-controls` plugin, you'll need to specify the following preference or your Music Controls will not work when using Cordova Audio:
+
+```xml
+<preference name="UsesMediaControls" value="true" />
+```
