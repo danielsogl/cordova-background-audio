@@ -13,7 +13,6 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     BOOL ok;
     NSError *setCategoryError = nil;
-
     if (usesMediaControls) {
         ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
                 withOptions:0
@@ -23,7 +22,6 @@
                 withOptions:AVAudioSessionCategoryOptionMixWithOthers
                 error:&setCategoryError];
     }
-
     
     if (!ok) {
         NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
